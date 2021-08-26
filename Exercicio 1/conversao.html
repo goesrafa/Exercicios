@@ -1,0 +1,186 @@
+<!--Exercício 1
+Sabendo que hoje o 1 dolar é equivalente a 5,36 reais.
+Fazer um programa em c#, java ou em liguagem de algoritmo que dado um valor em dolar, exiba o equivalente em reais-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<style>
+    #div1 {
+        border: 1px solid black;
+        width: 45%;
+        height: 65%;
+        background-color: FloralWhite;
+        position: absolute;
+        left: 27%;
+        border-radius: 5px;
+    }
+
+    #div2 {
+        position: relative;
+        left: 19%;
+        top: 2.5%;
+        font-family: tahoma;
+        font-size: 15px;
+    }
+
+    #div3 {
+        position: relative;
+        left: 53%;
+        top: -6%;
+        font-family: tahoma;
+        font-size: 15px;
+    }
+
+    #lbl1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(0, 7, 7);
+
+    }
+
+    #lbl2 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(0, 7, 7);
+
+    }
+
+    #txt1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(0, 7, 7);
+    }
+
+    h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(0, 7, 7);
+    }
+
+    #btn1 {
+        position: relative;
+        left: 32%;
+        width: 15%;
+        height: 12%;
+        font-family: tahoma;
+        border-radius: 2px;
+        background: #32dc1c;
+        font-weight: bold;
+
+    }
+
+    #btn2 {
+        position: relative;
+        left: 35%;
+        width: 15%;
+        height: 12%;
+        font-family: tahoma;
+        border-radius: 2px;
+        background: #dc1c1c;
+        font-weight: bold;
+    }
+
+    #btn1:hover,
+    #btn2:hover {
+
+        border: 1px solid black;
+        -moz-box-shadow: 0 3px 10px 0 #CCC;
+        -webkit-box-shadow: 0 3px 10px 0 #ccc;
+        text-shadow: 0px 0px 5px #fff;
+        -webkit-transform: translateX(-10px);
+
+
+    }
+
+    #div4 {
+        position: relative;
+        left: -1%;
+        top: 6%;
+        text-align: center;
+    }
+
+    #resultado {
+        font-family: tahoma;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    li {
+        font-size: 12px;
+    }
+
+    #div5 {
+        position: relative;
+        top: 15%;
+    }
+</style>
+
+<body background="fundo2.jpg">
+    <P align="rigth">
+    <form>
+        <div id="div1">
+            <center>
+                <h1>Conversão de moeda</h1>
+            </center>
+            <br>
+
+            <div id="div2">
+                <br> <label id="lbl1">Valor a ser convertido: </label><br />
+                <input type="text" id="txt1">
+            </div>
+            <br>
+            <div id="div3">
+                <label id="txt1">Converter para: </label>
+                <select id="opc">
+                    <option>Selecione...</option>
+                    <option value="US$">Dólar Americano</option>
+                    <option value="€">Euro</option>
+                </select><br />
+            </div>
+            <!--Botões conversão e limpa resultado-->
+            <div id="div4">
+                <input type="button" value="Converter" id="btn1" onClick="conversor()"></input>
+                <input type="reset" value="Limpar" id="btn2"></input>
+            </div>
+            <br>
+            <!--Resultado-->
+            <div id="div5">
+                <label id="resultado">Resultado: </label>
+                <br>
+                <span id="valFinal"></span>
+            </div>
+        </div>
+    </form>
+     <!--Função de conversão-->
+    <script>
+        var valor
+
+        
+        function conversor() {
+            var dolaramericano = 5.36;
+            var euro = 6.18;
+
+            valor = parseFloat(document.getElementById("txt1").value);
+            var opc = document.getElementById("opc").value;
+
+            if (isNaN(valor)) {
+                alert("São aceitos somente números");
+            }
+
+            //Conversão para dólar
+            if (opc == "US$") {
+                document.getElementById("valFinal").innerHTML = (valor * dolaramericano).toFixed(2);
+            }
+            //Conversão para Euro
+            if (opc == "€") {
+                document.getElementById("valFinal").innerHTML = (valor * euro).toFixed(2);
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
