@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Exercicio 3.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { }
+.cpp1-character { color: #808080; }
+.cpp1-comment { color: #008000; }
+.cpp1-documentationcomment { color: #008080; }
+.cpp1-float { color: #FF8000; }
+.cpp1-hexadecimal { color: #FF8000; }
+.cpp1-identifier { }
+.cpp1-illegalchar { }
+.cpp1-include { color: #0000FF; }
+.cpp1-instructionword { color: #0000FF; font-weight: bold; }
+.cpp1-number { color: #FF8000; }
+.cpp1-octal { color: #FF8000; }
+.cpp1-preprocessor { color: #804000; }
+.cpp1-space { }
+.cpp1-string { color: #0000FF; }
+.cpp1-symbol { color: #000080; font-weight: bold; }
+.cpp1-typeword { color: #8000FF; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include </span><span class="cpp1-include">&lt;stdio.h&gt;
+</span><span class="cpp1-preprocessor">#include </span><span class="cpp1-include">&lt;stdlib.h&gt;
+</span><span class="cpp1-preprocessor">#include </span><span class="cpp1-include">&lt;locale.h&gt;
+</span><span class="cpp1-comment">/*Exerc&iacute;cio 3
+
+Fazer um programa em c#, java ou em liguagem de algoritmo para:
+Uma lanchonete possui os seguintes produtos lanche de carne (R$20) ou de frango (R$16), batata frita (R$6) e refrigerante (R$4).
+Os lanches podem ou n&atilde;o vir com salada. Acr&eacute;scimo de R$2
+Os lanches e a batata podem ou n&atilde;o vir com maionese. Acr&eacute;scimo de R$1
+Desenhar as classes e criar uma fun&ccedil;&atilde;o para verificar o pre&ccedil;o do pedido
+
+Exemplo 1:
+Entrada: 1 hamburguer de carne com salada e 2 refrigerantes 
+Sa&iacute;da: 30 
+
+Example 2:
+Entrada: 2 hamburguer de carne sem salada, 2 batatas fritas com maionese e 1 refrigerante
+S&aacute;ida: 58
+*/
+
+
+</span><span class="cpp1-typeword">int</span><span class="cpp1-space"> main</span><span class="cpp1-symbol">(</span><span class="cpp1-typeword">int</span><span class="cpp1-space"> argc</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-typeword">char</span><span class="cpp1-symbol">**</span><span class="cpp1-space"> argv</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">	setlocale</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">LC_ALL</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-string">&quot;portuguese&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space"> 
+	
+	</span><span class="cpp1-typeword">int</span><span class="cpp1-space"> qtd</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> opc</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-typeword">float</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-space">	</span><span class="cpp1-instructionword">do</span><span class="cpp1-symbol">{</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;==========\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 1 - Lanche de carne \t Preco: R$20.00 \t\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 2 - Lanche de frango \t Preco: R$16.00 \t\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 3 - Batata frita \t Preco: R$6.00 \t \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 4 - Refrigerante \t Preco: R$4.00 \t  \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 5 - Lanche de carne com salada \t Preco: R$22.00 \t Acr&eacute;scimo de R$2.00  \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 6 - Lanche de frango com salada \t Preco: R$6.00 \t Acr&eacute;scimo de R$2.00 \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 7 - Lanche de frango com maionese \t Preco: R$7.00 \t Acr&eacute;scimo de R$1.00 \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 8 - Lanche de carne com maionese \t Preco: R$7.00 \t Acr&eacute;scimo de R$1.00 \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; 9 - Batata com maionese \t Preco: R$7.00 \t Acr&eacute;scimo de R$1.00 \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;0 - Sair&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Digite a op&ccedil;&atilde;o: \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	</span><span class="cpp1-comment">//Limpar a tela
+</span><span class="cpp1-space">	system</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;cls&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">opc</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	</span><span class="cpp1-instructionword">switch</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">opc</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de carne\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			
+				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">20.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">         
+		       printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		
+		   </span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-space">	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de frango\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">16.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">        </span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-space"> 	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Batata frita\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">6.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">        </span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-space">	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Refrigerente\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">16.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+
+    </span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">5</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de carne com salada\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">22.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+
+	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">6</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de frango com salada\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">6.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+
+	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">7</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de frango com maionese\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">7.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+	
+    </span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">8</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Lanche de carne com maionese\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">7.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+	
+    </span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">9</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Batata com maionese\n Digite a quantidade: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">qtd</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				totalComp </span><span class="cpp1-symbol">+=</span><span class="cpp1-space"> qtd </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">7.00</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">            printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O valor total da compra foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+	
+	</span><span class="cpp1-instructionword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;volte sempre&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				
+		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space">           
+	
+	</span><span class="cpp1-instructionword">default</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Op&ccedil;&atilde;o inv&aacute;lida!!\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-instructionword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		
+	</span><span class="cpp1-symbol">}
+}</span><span class="cpp1-instructionword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">opc </span><span class="cpp1-symbol">!=</span><span class="cpp1-number">0</span><span class="cpp1-space"> </span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;O total foi de R$: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> totalComp</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-space"> 
+	   
+ 
+</span><span class="cpp1-symbol">}
+</span></span>
+</code></pre>
+</body>
+</html>
